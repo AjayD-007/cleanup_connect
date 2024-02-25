@@ -1,28 +1,39 @@
 'use client'
-import React from "react";
+import React, { useState } from "react";
 import { useAuthContext } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
 import Image from "next/image"
+import Product from "@/component/product";
 function Page() {
-    const user = useAuthContext()
-    const router = useRouter()
+  const user = useAuthContext();
+  const router = useRouter();
+  const [data, setData] = useState<Array<any>>();
+  React.useEffect(() => {
+    if (user == null || (user as any).user == null) {
+      router.push("/signup");
+      console.log(user, (user as any).user == null);
+    } else {
+      fetch("https://fakestoreapi.com/products?limit=5")
+        .then(async (res) => {
+          let data = await res.json();
+          setData(data);
+        })
+        .then((json) => console.log(json));
+    }
+  }, [user]);
+console.log(data,"data");
 
-    React.useEffect(() => {
-        if (user == null || (user as any).user == null) router.push("/signup");
-        console.log(user,(user as any).user == null);
-        
-    }, [user])
-
-    return ( <main className="h-screen w-screen bg-white flex justify-center items-center">
-    <Image
-      className=""
-      src="/assets/jpg/comingsoon.jpg"
-      alt="coming soon"
-      width={500}
-      height={335}
-      priority
-    />
-</main>);
+    return (  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap:6 lg:gap-10">
+    {
+      data && data.length>0 ?
+      data.map((ele)=>{
+        return (
+          <Product product={ele} />
+        )
+      })
+      :<>Loading</>
+    }
+  </div>);
 }
 
 export default Page;
