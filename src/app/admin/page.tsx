@@ -8,7 +8,7 @@ function Page() {
     const router = useRouter()
 
     React.useEffect(() => {
-        if (user == null) router.push("/");
+        if (user == null || (user as any).user == null) router.push("/");
         console.log(user);
         
     }, [user])
