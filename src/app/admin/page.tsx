@@ -2,6 +2,7 @@
 import React from "react";
 import { useAuthContext } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
+import Image from "next/image"
 function Page() {
     const user = useAuthContext()
     const router = useRouter()
@@ -12,7 +13,16 @@ function Page() {
         
     }, [user])
 
-    return (<h1>Only logged in users can view this page</h1>);
+    return ( <main className="h-screen w-screen bg-white flex justify-center items-center">
+    <Image
+      className=""
+      src="/images/jpg/comingsoon.jpg"
+      alt="coming soon"
+      width={500}
+      height={335}
+      priority
+    />
+</main>);
 }
 
 export default Page;

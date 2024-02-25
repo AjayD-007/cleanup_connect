@@ -10,11 +10,13 @@ function Page() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const router = useRouter()
+    const [isSubmitting, setIsSubmitting] = React.useState(false);
 
     const handleForm = async (event:any) => {
         event.preventDefault()
 
         const { result, error } = await signUp(email, password);
+        setIsSubmitting(false);
 
         if (error) {
             toast.error('Invalid credentials');
@@ -57,7 +59,7 @@ function Page() {
                         className="w-full px-3 py-2 border rounded-md"
                     />
                 </div>
-                <button type="submit" className="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-600 transition-colors">Sign up</button>
+                <button type="submit"disabled={isSubmitting} className={`w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-600 transition-colors ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}>Sign up</button>
             </form>
             <h1 className="text-2xl font-semibold my-6">Already a user?</h1>
             <Link href={"/signin"}  >
