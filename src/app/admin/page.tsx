@@ -8,7 +8,7 @@ function Page() {
     const router = useRouter()
 
     React.useEffect(() => {
-        if (user == null || (user as any).user == null) router.push("/signin");
+        if (user == null || (user as any).user == null) router.push("/signup");
         console.log(user,(user as any).user == null);
         
     }, [user])
