@@ -16,7 +16,7 @@ function Page() {
     return ( <main className="h-screen w-screen bg-white flex justify-center items-center">
     <Image
       className=""
-      src="/images/jpg/comingsoon.jpg"
+      src="/assets/jpg/comingsoon.jpg"
       alt="coming soon"
       width={500}
       height={335}
