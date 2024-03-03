@@ -27,9 +27,11 @@ console.log(data,"data");
     <div className="">
       {
         data && data.length>0 ?
-        data.map((ele)=>{
+        data.map((ele,index)=>{
           return (
-            <Product product={ele} />
+            <div className="" key={index}>
+              <Product product={ele} />
+            </div>
           )
         })
         :<>Loading</>
