@@ -21,7 +21,12 @@ function Page() {
         .then((json) => console.log(json));
     }
   }, [user]);
-    return (  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap:6 lg:gap-10">
+    return (  
+    <div className="">
+      <div className="sticky top-0 shadow">
+<div className="text-2xl font-bold container py-4 px-4" >Products</div>
+      </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap:6 lg:gap-10">
     {
       data && data.length>0 ?
       data.map((ele,index)=>{
@@ -33,7 +38,9 @@ function Page() {
       })
       :<>Loading</>
     }
-  </div>);
+  </div>
+    </div>
+  );
 }
 
 export default Page;
