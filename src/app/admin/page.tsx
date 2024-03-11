@@ -19,7 +19,7 @@ function Page() {
       //     setData(data);
       //   })
       //   .then((json) => console.log(json));
-      [
+      setData([
         {
           id: 1,
           title: "Soap oil-Sandal",
@@ -70,7 +70,7 @@ function Page() {
           image: "/assets/pngs/soap_oil.png",
           rating: { rate: 3.9, count: 120 },
         },
-      ];
+      ]);
     }
   }, [user]);
   return (
