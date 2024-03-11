@@ -37,12 +37,20 @@ const Product = ({ product }: { product: any }) => {
           <p className="text-gray-600">${product.price}</p>
           <p className="text-gray-800 mt-2 text-sm">{product.description}</p>
           <div className="md:flex items-center mt-4">
+            <div className="flex gap-4">
             <button
               onClick={() => addToCart()}
               className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded"
             >
               Add to Cart
             </button>
+            <button
+              onClick={() => router.replace('/checkout')}
+              className="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded"
+            >
+             Buy Now
+            </button>
+            </div>
             <div className="text-xs mt-2">
               <span className="text-gray-600">
                 Rating: {product.rating.rate}/5 ({product.rating.count} reviews)
