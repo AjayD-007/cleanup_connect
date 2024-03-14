@@ -10,6 +10,7 @@ const Checkout = () => {
     city: "",
     state: "",
     zip: "",
+    phone:""
   });
 
   // Function to handle shipping information change
@@ -26,7 +27,7 @@ const Checkout = () => {
   const handleCheckout = (event:any) => {
     event.preventDefault();
     console.log("Checkout successful! Shipping to:", shippingInfo);
-    router.replace("/success"); // Redirect to success page
+    router.replace("/payment"); // Redirect to success page
   };
 
   return (
@@ -35,6 +36,20 @@ const Checkout = () => {
       {user ? (
         <form onSubmit={handleCheckout} className="max-w-sm mx-auto">
           <h3 className="text-lg font-semibold mb-2">Shipping Information</h3>
+          <label htmlFor="phone" className="block mb-1">
+            Phone:
+          </label>
+          <input
+            type="tel"
+            minLength={10}
+            maxLength={10}
+            inputMode="numeric"
+            name="phone"
+            value={shippingInfo.phone}
+            onChange={handleInputChange}
+            className="w-full border rounded-md px-3 py-2 mb-2"
+            required
+          />
           <label htmlFor="address" className="block mb-1">
             Address:
           </label>
@@ -83,7 +98,7 @@ const Checkout = () => {
             type="submit"
             className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded"
           >
-            Place Order
+            Go to Payment
           </button>
         </form>
       ) : (

@@ -75,7 +75,7 @@ function Page() {
   }, [user]);
   return (
     <div className="">
-      <div className="sticky top-0 shadow bg-white">
+      <div className="sticky top-0 z-10 shadow bg-white">
         <div className="text-2xl font-bold container pt-8   py-4 px-4">
           Products
         </div>
