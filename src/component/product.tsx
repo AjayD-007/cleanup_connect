@@ -45,7 +45,7 @@ const Product = ({ product }: { product: any }) => {
               Add to Cart
             </button>
             <button
-              onClick={() => router.replace('/checkout')}
+              onClick={() => router.push('/checkout')}
               className="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded"
             >
              Buy Now

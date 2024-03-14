@@ -67,7 +67,7 @@ function Page() {
           description:
             "Experience superior Cleaning with Arruviy Soap Oil 1Ltr.This versatile soap oil is perfect for cloths and surface cleaning providing sandal scent",
           category: "men's clothing",
-          image: "/assets/pngs/soap_oil.png",
+          image: "/assets/pngs/powder.png",
           rating: { rate: 3.9, count: 120 },
         },
       ]);
