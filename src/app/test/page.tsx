@@ -1,4 +1,5 @@
 'use client'
+import Script from "next/script";
 import { useEffect, useState } from "react";
 
 export default function TestPage(){
@@ -17,7 +18,7 @@ export default function TestPage(){
     let ticketprixEmbed:any; // Define ticketprixEmbed here
     // Load the script and assign ticketprixEmbed
     const script = document.createElement("script");
-    script.src = "https://ticketprix.com/api/script/embed/event";
+    script.src = "https://www.ticketprix.com/api/script/embed/event";
     script.async = true;
     script.onload = () => {
       setTicketprixEmbed((window as any).ticketprixEmbed); // Assign ticketprixEmbed
@@ -30,6 +31,7 @@ export default function TestPage(){
   }, []); 
   return (
     <>
+    <Script src={"https://www.ticketprix.com/api/script/embed/event"} />
     <div className="drawer-container">
     <div className="drawer">
       
