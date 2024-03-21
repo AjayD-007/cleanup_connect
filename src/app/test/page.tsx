@@ -20,19 +20,13 @@ export default function Home() {
       
     });}} 
      /> */}
-     <Script src={"https://www.ticketprix.com/api/script/embed/event"}
-     onLoad={()=>{(window as any).ticketprixEmbed!.init({
-      mountId: "ticketprix-embed",
-      eventSlug: "kkk",
-      frameHeight: "100%",
-    });}} 
-     />
-     <Script src={"https://www.ticketprix.com/api/script/embed/login"}
-     onLoad={()=>{(window as any).TicketprixLoginEmbed!.init({
-      mountId: "login-embed",
-      
-    });}} 
-     />
+     <div id="ticketprix-user-embed"></div>
+      <Script
+        src={"http://local.ticketprix.com/api/script/embed/login"}
+        onLoad={() => {
+          (window as any).initTicketprixLogin();
+        }}
+      />
     </>
 
   );
