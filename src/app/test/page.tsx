@@ -22,7 +22,7 @@ export default function Home() {
      /> */}
      <div id="ticketprix-user-embed"></div>
       <Script
-        src={"http://local.ticketprix.com/api/script/embed/login"}
+        src={"https://www.ticketprix.com/api/script/embed/login"}
         onLoad={() => {
           (window as any).initTicketprixLogin();
         }}
