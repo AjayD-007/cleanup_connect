@@ -13,7 +13,7 @@ export default function Home({
       <Script
         src={"https://www.ticketprix.com/api/script/embed/event"}
         onLoad={() => {
-          (window as any).initTicketprixBooking({ eventSlug: slug });
+          (window as any).initTicketprixBooking({ eventSlug: slug,primaryColor:"green",secondaryColor:"yellow",buttonText:"Buy ticks",buttonTextColor:"blue" });
         }}
       />
     </>
